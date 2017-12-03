@@ -1,0 +1,18 @@
+{{#each students}}
+<div class="card card-body mb-2">
+
+  <h5>Class: {{cls}} No. {{num}} </h5>
+  <h5>Name: {{firstname}} {{lastname}}</h5>
+  <a class="btn btn-primary btn-block mb-2" href="/students/edit/{{id}}">Edit</a>
+  <form method="post" action="/students/{{id}}?_method=DELETE">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" class="btn btn-danger btn-block" value="Delete">
+
+
+  </form>
+
+</div>
+
+{{ else}}
+<p>No Students</p>
+{{/each}}

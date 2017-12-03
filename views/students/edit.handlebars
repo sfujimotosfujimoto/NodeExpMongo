@@ -1,0 +1,29 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{ else }} {{/each}}
+
+<div class="card card-body">
+  <h3>Student to Edit</h3>
+  <form action="/students/{{student.id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" class="form-control" name="firstname" value="{{student.firstname}}">
+    </div>
+    <div class="form-group">
+      <label for="lasttname">Last Name</label>
+      <input type="text" class="form-control" name="lastname" value="{{student.lastname}}">
+    </div>
+    <div class="form-group">
+      <label for="cls">Class</label>
+      <input type="text" class="form-control" name="cls" value="{{student.cls}}">
+    </div>
+    <div class="form-group">
+      <label for="num">Number</label>
+      <input type="text" class="form-control" name="num" value="{{student.num}}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>
